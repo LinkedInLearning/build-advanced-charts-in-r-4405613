@@ -23,8 +23,3 @@ unique_country <- ren %>%
   filter(type == "country") %>%
   distinct(territory)
 
-## select data from continents
-cont <- ren %>%
-  filter(type == "continent") %>%
-  distinct(territory) %>%
-  pull
