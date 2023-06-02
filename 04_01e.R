@@ -45,8 +45,10 @@ cvd_grid(palette_plot(brand, label_size = 4))
 
 
 brand_rgb <- t(col2rgb(brand)/ 255 )
+
 brand_sat <- adjust_color(brand_rgb, which_colors = c(2, 3),
                           saturation = 0.3, brightness = 0.9,
                           plotting = TRUE)
 brand_hex <- rgb(brand_sat)
+
 cvd_grid(palette_plot(brand_hex))
