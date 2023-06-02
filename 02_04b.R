@@ -7,7 +7,7 @@ matr <- read_csv("data/renewable_data_35.csv") %>%
   as.matrix()
 
 ## Create colour palette for the chord diagram
-
+source_palette <- c("#1B9E77", "#D95F02", "#7570B3", "#A6761D")
 
 ## Create structure to assign to each renewable source a specific colour
 
@@ -31,7 +31,7 @@ chordDiagram(
   annotationTrackHeight = c(0.03, 0.01), ## height of annotation track
   preAllocateTracks = list(
     track.height = max(strwidth(unlist(dimnames(matr))))
-  ) ## number of pre-allocated empty tracks this allow an easy customisation
+  ) ## number of pre-allocated empty tracks to allow an easy customisation
 )
 circos.track(
   track.index = 1,
