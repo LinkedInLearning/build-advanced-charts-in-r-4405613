@@ -1,8 +1,8 @@
 library(tidyverse)
-library(circlize)
 
 ## read the data from renewable energy
-data <- read_csv("data/renewable_continents.csv")
+data <- read_csv("data/renewable_continents.csv",
+                 show_col_types = FALSE)
 
 ## I select the variable I will use to create the chord diagram
 ## Remove all the data with primary energy share = 0%
