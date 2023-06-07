@@ -8,7 +8,7 @@ data <- read_csv("data/renewable_03_04.csv",
 ggs <- data %>%
   ggplot(
     aes(
-      x = year, y = renewables_perc_electricity,
+      x = year, y = share_electricity,
       group = territory,
       colour = Continent
     )) +
@@ -22,7 +22,8 @@ ggs <- data %>%
     axis.text.x = element_text(size = 16),
     legend.position = "bottom",
     legend.text = element_text(size = 9),
-    plot.title = element_text(size = 30, face = "bold", hjust = 0.5,
+    plot.title = element_text(size = 30, face = "bold",
+                              hjust = 0.5,
                               margin = margin(10,0,10,0)),
     plot.margin = unit(c(1,8,1,8), "lines")
   )
@@ -31,9 +32,9 @@ ggs <- data %>%
 ggs +
   geom_text_repel(
     data = data,
-    aes(x = year, y = renewables_perc_electricity,
+    aes(x = year, y = share_electricity,
       label = paste0(territory, " - ",
-                       round(renewables_perc_electricity), "%")),
+                       round(share_electricity), "%")),
     force =  20,
     show.legend = FALSE,
     size = 5,

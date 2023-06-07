@@ -1,4 +1,4 @@
-territory,country_code,Continent,year,renewables_perc_electricity,geo_biomass_other_TWh,solar_generation_TWh,wind_generation_TWh,hydro_generation_TWh
+territory,country_code,Continent,year,share_electricity,geo_biomass_other_TWh,solar_generation_TWh,wind_generation_TWh,hydro_generation_TWh
 Australia,AUS,Oceania,2000,8.634437,0.8895,0.04675,0.134,16.4665
 Australia,AUS,Oceania,2021,29.134624,3.344045,31.193806,26.795876,15.996179
 China,CHN,Asia,2000,16.639128,2.537,0.022,0.589899,222.41
