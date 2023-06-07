@@ -1,4 +1,4 @@
-territory,country_code,type,year,renewables_perc_electricity,geo_biomass_other_TWh,solar_generation_TWh,wind_generation_TWh,hydro_generation_TWh
+territory,country_code,type,year,share_electricity,geo_biomass_other_TWh,solar_generation_TWh,wind_generation_TWh,hydro_generation_TWh
 Africa,NA,continent,1990,18.207285,0.796,0,0,57.254658
 Africa,NA,continent,1991,18.917315,0.812,0,0,60.65149
 Africa,NA,continent,1992,17.901201,0.84225,0,0,57.86029
