@@ -8,23 +8,23 @@ ren <- read_csv("data/renewable_continents.csv")
 ren %>%
   filter(year %in% 2000:2021) %>%
   ggplot() +
-  geom_histogram(aes(renewables_perc_electricity), binwidth = 1)
+  geom_histogram(aes(share_electricity), binwidth = 1)
 
 ## create a frequency polygons
 ren %>%
   ggplot() +
-  geom_freqpoly(aes(renewables_perc_electricity, colour = Continent))
+  geom_freqpoly(aes(share_electricity, colour = Continent))
 
 ## Countries that use more than 90% of renewable energy
 ren %>%
-  filter(renewables_perc_electricity >= 90) %>%
-  ggplot(aes(year, renewables_perc_electricity, colour = territory)) +
+  filter(share_electricity >= 90) %>%
+  ggplot(aes(year, share_electricity, colour = territory)) +
   geom_line()
 
 ## Line chart for Europe and countries that use more
 ## than 50% of renewable energy
 ren %>%
   filter(Continent == "Europe",
-         renewables_perc_electricity >= 50) %>%
-  ggplot(aes(year, renewables_perc_electricity, colour = territory)) +
+         share_electricity >= 50) %>%
+  ggplot(aes(year, share_electricity, colour = territory)) +
   geom_line()
