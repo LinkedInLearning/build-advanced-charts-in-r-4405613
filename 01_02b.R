@@ -3,7 +3,7 @@ library(tidyverse)
 
 
 ## read data from continents
-renewable_country <- read_csv("data/renewable_continents.csv",
+ren <- read_csv("data/renewable_continents.csv",
                              show_col_types = FALSE)
 
 
