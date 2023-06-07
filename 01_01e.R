@@ -11,11 +11,10 @@ names(ren)
 spec(ren)
 
 ## get the dimension of the data frame in rows x columns
-d <- dim(ren)
+dim(ren)
 
 ## create a summary table
-summary(ren)
-
+summary(ren[1:9])
 
 
 ## extract all the country
