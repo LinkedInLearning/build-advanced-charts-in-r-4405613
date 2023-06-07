@@ -1,7 +1,7 @@
 library(tidyverse)
 
 ## read the data using read_csv
-
+ren <- read_csv("data/renewable.csv")
 
 ## get column names
 
@@ -15,8 +15,4 @@ library(tidyverse)
 ## create a summary table
 
 
-
-
 ## extract all the country
-
-## select data from continents
