@@ -8,22 +8,23 @@ data <- read_csv("data/renewable_continents.csv",
 ## I select the variable I will use to create the chord diagram
 ## Remove all the data with primary energy share = 0%
 data_0 <- data %>%
-  filter(renewables_perc_electricity > 0,
+  filter(share_electricity > 0,
          year == 2021)
 
+## summary statistics
 summary(data_0)
 
-## we run again the summary statistics
+
 ## we select all the data with share of primary energy > 35,
 ## which is the mean in 2021
 
 data_35 <- data_0 %>%
-  filter(renewables_perc_electricity > 35)
+  filter(share_electricity > 35)
 
 ## data for the matrix
 renewable_wider <- data_35 %>%
   select(-c("country_code", "year",
-            "renewables_perc_electricity", "Continent")) %>%
+            "share_electricity", "Continent")) %>%
   ## remove punctuations from countries names.
   mutate(territory = str_remove(territory, "[[:punct:]]")) %>%
   rename(

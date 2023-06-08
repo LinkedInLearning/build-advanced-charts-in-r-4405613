@@ -1,4 +1,4 @@
-territory,country_code,Continent,year,renewables_perc_electricity,geo_biomass_other_TWh,solar_generation_TWh,wind_generation_TWh,hydro_generation_TWh
+territory,country_code,Continent,year,share_electricity,geo_biomass_other_TWh,solar_generation_TWh,wind_generation_TWh,hydro_generation_TWh
 Algeria,DZA,Africa,1990,0.8383011,0,0,0,0.135
 Algeria,DZA,Africa,1991,1.6892477,0,0,0,0.293
 Algeria,DZA,Africa,1992,1.0882642,0,0,0,0.199
