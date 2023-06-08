@@ -15,7 +15,3 @@ ren <- read_csv("data/renewable_continents.csv",
 
 ## Countries that use more than 90% of renewable energy
 
-
-## Line chart for Europe and countries that use more
-## than 50% of renewable energy
-
