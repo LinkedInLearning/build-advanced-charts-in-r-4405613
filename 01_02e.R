@@ -12,19 +12,14 @@ ren %>%
 
 ## create a frequency polygons
 ren %>%
+  filter(year %in% 2000:2021) %>%
   ggplot() +
   geom_freqpoly(aes(share_electricity, colour = Continent))
 
 ## Countries that use more than 90% of renewable energy
 ren %>%
-  filter(share_electricity >= 90) %>%
-  ggplot(aes(year, share_electricity, colour = territory)) +
-  geom_line()
-
-## Line chart for Europe and countries that use more
-## than 50% of renewable energy
-ren %>%
-  filter(Continent == "Europe",
-         share_electricity >= 50) %>%
+  filter(year %in% 2000:2021,
+         Continent == "Europe",
+         share_electricity >= 90) %>%
   ggplot(aes(year, share_electricity, colour = territory)) +
   geom_line()
