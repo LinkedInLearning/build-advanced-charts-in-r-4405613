@@ -2,8 +2,7 @@ library(tidyverse)
 library(circlize)
 
 ## read the matrix
-matr <- read.table("data/matrix.txt") %>%
-  read_csv("data/renewable_data_35.csv",
+matr <- read_csv("data/renewable_data_35.csv",
            show_col_types = FALSE) %>%
   column_to_rownames("name") %>%
   as.matrix()
@@ -20,6 +19,7 @@ chordDiagram(
 
 )
 
+circos.clear()
 ## change the column's name of the matrix
 
 circos.par(start.degree = )
