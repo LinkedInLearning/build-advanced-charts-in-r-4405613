@@ -9,7 +9,7 @@ matr <- read_csv("data/renewable_data_35.csv") %>%
 ## Create colour palette for the chord diagram
 source_palette <- c("#1B9E77", "#D95F02", "#7570B3", "#A6761D")
 
-## Create structure to assign to each renewable source a specific colour
+## Create structure to assign to each renewable source a colour
 
 
 
@@ -23,15 +23,15 @@ source_palette <- c("#1B9E77", "#D95F02", "#7570B3", "#A6761D")
 circos.par(start.degree = -90)
 chordDiagram(
   matr,
-  big.gap = 70, ## increase the gap between the upper and lower sectors.
-  small.gap = 3, ## gap between sectors
+  big.gap = 70, 
+  small.gap = 3, 
   ## add colours
 
-  annotationTrack = "grid", ## show only the track and the sectors, no names
-  annotationTrackHeight = c(0.03, 0.01), ## height of annotation track
+  annotationTrack = "grid", 
+  annotationTrackHeight = c(0.03, 0.01), 
   preAllocateTracks = list(
     track.height = max(strwidth(unlist(dimnames(matr))))
-  ) ## number of pre-allocated empty tracks to allow an easy customisation
+  ) 
 )
 circos.track(
   track.index = 1,
@@ -41,11 +41,11 @@ circos.track(
       CELL_META$ylim[1],
       CELL_META$sector.index,
       facing = "clockwise",
-      niceFacing = TRUE, ## Make sure that the label on the left fit human eyes. Anticlockwise
-      adj = c(0, 0.5)    ## offset of the text to male sure that the text doesn't overlap with the track.
+      niceFacing = TRUE, 
+      adj = c(0, 0.5)    
     )
   },
-  bg.border = NA ## colour for the border of the plotting region
+  bg.border = NA 
 )
 # add title
 
