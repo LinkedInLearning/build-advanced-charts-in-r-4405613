@@ -49,13 +49,6 @@ circos.track(
   bg.border = NA ## colour for the border of the plotting region
 )
 
-# add title
-title("Renewable source of energy per countries", cex = 10)
-## add footnote
-text(-0.6, -1, "*other include geothermal, biomass and other sources")
-## add data source as foot note.
-text(0.8, -1, pos = 4, "Source: `Our world in data`")
-
 ## define continents
 
 
