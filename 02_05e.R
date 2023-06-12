@@ -2,7 +2,8 @@ library(tidyverse)
 library(circlize)
 
 ## read the matrix, the columns are ordered by continents
-matr <- read_csv("data/renewable_02_05.csv") %>%
+matr <- read_csv("data/renewable_02_05.csv",
+                 show_col_types = FALSE) %>%
   column_to_rownames("name") %>%
   as.matrix()
 
@@ -18,13 +19,6 @@ country_colour <- structure(rep("#1F78B4",
                             names = colnames(matr))
 ## create a colour grid for the chord diagram
 col_grid <- c(source_colour, country_colour)
-
-## define continents
-asia <- colnames(matr)[1:3]
-europe <- colnames(matr)[4:23]
-north_america <- colnames(matr)[24]
-oceania <- colnames(matr)[25]
-south_america <- colnames(matr)[26:31]
 
 circos.par(start.degree = -90)
 chordDiagram(
@@ -53,6 +47,16 @@ circos.track(
   },
   bg.border = NA ## colour for the border of the plotting region
 )
+
+## define continents
+
+asia <- colnames(matr)[1:3]
+europe <- colnames(matr)[4:23]
+north_america <- colnames(matr)[24]
+oceania <- colnames(matr)[25]
+south_america <- colnames(matr)[26:31]
+
+## highlight sectors
 
 highlight.sector(c("hydro", "wind", "solar", "other"), col = NA,
                  border = "grey95",
@@ -118,10 +122,4 @@ highlight.sector(south_america, col = NA,
                  cex = 1.2
 )
 
-# add title
-title("Renewable source of energy per countries", cex = 10)
-## add footnote
-text(-0.6, -1, "*other include geothermal, biomass and other sources")
-## add data source as foot note.
-text(0.8, -1, pos = 4, "Source: `Our world in data`")
 circos.clear()
