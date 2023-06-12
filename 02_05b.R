@@ -2,12 +2,13 @@ library(tidyverse)
 library(circlize)
 
 ## read the matrix, the columns are ordered by continents
-matr <- read_csv("data/renewable_02_05.csv") %>%
+matr <- read_csv("data/renewable_02_05.csv",
+                 show_col_types = FALSE) %>%
   column_to_rownames("name") %>%
   as.matrix()
 
 ## Create colour palette for the chord diagram
-source_palette <- c("#1B9E77", "#D95F02", "#7570B3", "#A6761D") ## colour blind friendly
+source_palette <- c("#1B9E77", "#D95F02", "#7570B3", "#A6761D")
 
 ## create structure to assign to each renewable source a specific colour
 
@@ -19,12 +20,7 @@ country_colour <- structure(rep("#1F78B4",
 ## create a colour grid for the chord diagram
 col_grid <- c(source_colour, country_colour)
 
-## define continents
-
-
-
-
-
+## chord diagram
 circos.par(start.degree = -90)
 chordDiagram(
   matr,
@@ -59,6 +55,9 @@ title("Renewable source of energy per countries", cex = 10)
 text(-0.6, -1, "*other include geothermal, biomass and other sources")
 ## add data source as foot note.
 text(0.8, -1, pos = 4, "Source: `Our world in data`")
+
+## define continents
+
 
 ## highlight sectors
 
