@@ -3,7 +3,7 @@ library(circlize)
 
 
 ## read the matrix
-matr <- read_csv("renewable_data_35.csv",
+matr <- read_csv("data/renewable_data_35.csv",
                  show_col_types = FALSE) %>%
   column_to_rownames("name") %>%
   as.matrix()
@@ -11,7 +11,7 @@ matr <- read_csv("renewable_data_35.csv",
 ## Create colour palette for the chord diagram
 source_palette <- c("#1B9E77", "#D95F02", "#7570B3", "#A6761D")
 
-## create structure to assign to each renewable source a specific color
+## create structure to assign to each renewable source a specific colour
 
 source_colour <- structure(source_palette, names = rownames(matr))
 
@@ -21,6 +21,7 @@ country_colour <- structure(rep("#1F78B4",
 
 ## create a colour grid for the chord diagram
 col_grid <- c(source_colour, country_colour)
+
 
 circos.par(start.degree = -90)
 chordDiagram(
