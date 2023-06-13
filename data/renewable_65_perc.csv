@@ -1,4 +1,4 @@
-territory,country_code,Continent,year,renewables_perc_electricity,geo_biomass_other_TWh,solar_generation_TWh,wind_generation_TWh,hydro_generation_TWh
+territory,country_code,Continent,year,share_electricity,geo_biomass_other_TWh,solar_generation_TWh,wind_generation_TWh,hydro_generation_TWh
 Austria,AUT,Europe,2000,72.58146,1.5282793,0.003,0.067,41.83565
 Austria,AUT,Europe,2001,69.17786,1.667812,0.005,0.172,40.455482
 Austria,AUT,Europe,2002,69.03938,1.520444,0.009,0.203,40.227
