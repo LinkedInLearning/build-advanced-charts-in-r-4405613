@@ -29,7 +29,6 @@ ggdotchart(
                     face = "bold"),
   ggtheme = theme_void()
 ) +
-  xlab("") + ylab("") +
   ggtitle("Solar energy in 2021 in TWh") +
   theme(
     axis.text.x = element_blank(),
