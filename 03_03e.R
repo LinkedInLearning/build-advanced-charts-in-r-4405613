@@ -1,17 +1,18 @@
 library(tidyverse)
 library(ggpubr)
 
-data <- read_csv("data/renewable_continents.csv", show_col_types = FALSE)
+data <- read_csv("data/renewable_continents.csv",
+                 show_col_types = FALSE)
 
 
 ## select the top countries that use solar energy.
 top_10 <- data %>%
   filter(year == 2021) %>%
-  slice_max(solar_generation_TWh, n = 10)
+  slice_max(solar, n = 10)
 
 ggdotchart(
   top_10,
-  y = "solar_generation_TWh",
+  y = "solar",
   x = "territory",
   color = "Continent",
   palette = "jco",
@@ -21,8 +22,11 @@ ggdotchart(
   add = "segments",
   add.params = list(color = "black", size = 0.5),
   dot.size = 8,
-  label = round(top_10$solar_generation_TWh),
-  font.label = list(color = "grey95", size = 10, vjust = 0.5, face = "bold"),
+  label = round(top_10$solar),
+  font.label = list(color = "grey95",
+                    size = 10,
+                    vjust = 0.5,
+                    face = "bold"),
   ggtheme = theme_void()
 ) +
   xlab("") + ylab("") +
@@ -32,3 +36,4 @@ ggdotchart(
     axis.ticks.x = element_blank(),
     plot.title = element_text(hjust = 0.5, size = 22)
   )
+
