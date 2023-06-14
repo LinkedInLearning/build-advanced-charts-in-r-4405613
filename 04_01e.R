@@ -6,17 +6,17 @@ library(recolorize)
 ## read slope graph with default colours
 slope_graph <- readRDS("data/slope_04_01.rdata")
 
-slope_graph +
-  scale_colour_manual(name = "",
-    values = c("blue", "lightblue", "darkblue", "purple")
-  )
-
-cvd_grid(
-  slope_graph +
-    scale_colour_manual(name = "",
-      values = c("blue", "lightblue", "darkblue", "purple")
-    )
-)
+# slope_graph +
+#   scale_colour_manual(name = "",
+#     values = c("blue", "lightblue", "darkblue", "purple")
+#   )
+# 
+# cvd_grid(
+#   slope_graph +
+#     scale_colour_manual(name = "",
+#       values = c("blue", "lightblue", "darkblue", "purple")
+#     )
+# )
 ## viridis colour palette
 slope_graph +
   scale_colour_viridis_d(name = "", option = "magma", alpha = 0.5)
@@ -27,8 +27,8 @@ cvd_grid(slope_graph +
 
 
 ## we select one of this palette and run again the code
-slope_graph +
-  scale_colour_brewer()
+# slope_graph +
+#   scale_colour_brewer()
 
 ## use R colours brewer to find colour blind palette
 display.brewer.all(colorblindFriendly = TRUE)
