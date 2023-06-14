@@ -14,7 +14,6 @@ matr <- read_csv("data/renewable_data_65.csv",
 col_grid <- col_grid()
 
 ## chord diagram
-circos.par(start.degree = -90)
 ## formula format for circlize charts
 cd <- ~circos_function(matr, col_grid, small_gap = 4)
 
