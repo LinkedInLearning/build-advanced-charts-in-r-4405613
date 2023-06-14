@@ -24,8 +24,10 @@ circos.clear()
 sp <- readRDS("data/sparkline.rdata")
 
 plot_col <- plot_grid(sp, cd,
-                      labels = c("Share of renewable energy ",
-                                 "Renewable source of energy in 2021"),
+                      labels = c(
+                        "Share of renewable energy ",
+                        "Renewable source of energy in 2021"
+                        ),
                       ncol = 2,
                       hjust = 0.1,
                       label_x = 0.1,
@@ -37,5 +39,3 @@ plot_col <- plot_grid(sp, cd,
 circos.clear()
 
 ## Add a title and subtitle. We need to create a ggplot element
-
-## create footnote
