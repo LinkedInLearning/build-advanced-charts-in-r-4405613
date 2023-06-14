@@ -14,6 +14,6 @@ slope_graph <- readRDS("data/slope_04_01.rdata")
 ## use R colours brewer to find colour blind palette
 
 
+
 ## ------------------Brand colours -----------------------
 brand <- c("red", "darkgreen", "blue", "purple")
-
