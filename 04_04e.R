@@ -1,11 +1,11 @@
 library(tidyverse)
 library(cowplot)
 library(circlize)
-source("R/circos_function.R")
-source("R/04_03/col_grid.R")
+source("circos_function.R")
+source("col_grid.R")
 
 ## read the matrix
-matr <- read_csv("R/04_02/renewable_data_65.csv",
+matr <- read_csv("data/renewable_data_65.csv",
                  show_col_types = FALSE) %>%
   column_to_rownames("name") %>%
   as.matrix()
@@ -14,14 +14,13 @@ matr <- read_csv("R/04_02/renewable_data_65.csv",
 col_grid <- col_grid()
 circos.clear()
 ## chord diagram
-circos.par(start.degree = -90)
 ## formula format for circlize charts
 cd <- ~circos_function(matr, col_grid, small_gap = 4)
 
 circos.clear()
 
 ## Read sparklines
-sp <- readRDS("R/04_02/sparkline.rdata")
+sp <- readRDS("data/sparkline.rdata")
 
 plot_col <- plot_grid(sp, cd,
                       labels = c("Share of renewable energy ",
@@ -51,7 +50,6 @@ title_gg <- ggplot() +
       fill = "grey92", colour = NA)
   )
 
-
 panel <- plot_grid(title_gg,
                    plot_col,
                    ncol = 1, rel_heights = c(0.1, 1),
@@ -63,17 +61,7 @@ panel <- plot_grid(title_gg,
   )
 panel
 circos.clear()
-# footnote <- ggplot() +
-#   labs(
-#     caption = "Source: Our world in data"
-#   ) +
-#   theme(
-#     plot.caption = element_text(size = 10, hjust = -1.2)
-#   )
-# plot_grid(panel, footnote,
-#           ncol = 1, rel_heights = c(0.1, 1),
-#           align = "v")
-# create footnote
+
 panel_footnote <- add_sub(panel,
                         label = "Source: Our world in data",
                         fontface = "bold",
@@ -85,9 +73,6 @@ ggdraw(panel_footnote) +
   geom_text(
     aes(x = 0.55, y = 0.2, label = txt),
     hjust = 0.5, vjust = 0.5,
-    #angle = 0,
     size = 12/.pt,
-    #color = "black",
-    #inherit.aes = FALSE
    )
 
