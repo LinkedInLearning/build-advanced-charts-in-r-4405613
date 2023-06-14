@@ -11,8 +11,12 @@ matr <- read_csv("data/renewable_data_65.csv",
   column_to_rownames("name") %>%
   as.matrix()
 
+## define colour grid for the chord diagram
+col_grid <- col_grid()
 
-
+## chord diagram
+## formula format for circlize charts
+cd <- ~circos_function(matr, col_grid, small_gap = 4)
 
 circos.clear()
 
