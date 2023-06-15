@@ -26,6 +26,6 @@ circos_function <- function(matrix, col_grid, big_gap = 70, small_gap = 3) {
       )
     },
     bg.border = NA, ## colour for the border of the plotting region
-    circos.clear()
   )
+  circos.clear()
 }

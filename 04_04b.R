@@ -1,11 +1,11 @@
 library(tidyverse)
 library(cowplot)
 library(circlize)
-source("R/circos_function.R")
-source("R/04_03/col_grid.R")
+source("circos_function.R")
+source("col_grid.R")
 
 ## read the matrix
-matr <- read_csv("R/04_02/renewable_data_65.csv",
+matr <- read_csv("data/renewable_data_65.csv",
                  show_col_types = FALSE) %>%
   column_to_rownames("name") %>%
   as.matrix()
@@ -21,7 +21,7 @@ cd <- ~circos_function(matr, col_grid, small_gap = 4)
 circos.clear()
 
 ## Read sparklines
-sp <- readRDS("R/04_02/sparkline.rdata")
+sp <- readRDS("data/sparkline.rdata")
 
 plot_col <- plot_grid(sp, cd,
                       labels = c("Share of renewable energy ",
