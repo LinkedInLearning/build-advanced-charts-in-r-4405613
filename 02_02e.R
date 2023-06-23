@@ -27,12 +27,6 @@ renewable_wider <- data_35 %>%
             "share_electricity", "Continent")) %>%
   ## remove punctuations from countries names.
   mutate(territory = str_remove(territory, "[[:punct:]]")) %>%
-  rename(
-    other = geo_biomass_other_TWh,
-    solar = solar_generation_TWh,
-    wind = wind_generation_TWh,
-    hydro = hydro_generation_TWh
-  ) %>%
   column_to_rownames("territory") %>%
   rownames_to_column() %>%
   pivot_longer(-rowname) %>%
